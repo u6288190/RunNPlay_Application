@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:runnplayapp/models/cart.dart';
 
-class PaymentPage extends StatelessWidget {
-  const PaymentPage({Key? key}) : super(key: key);
+class MyListPage extends StatelessWidget {
+  const MyListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,13 @@ class PaymentPage extends StatelessWidget {
   }
 }
 
-class _CartList extends StatelessWidget {
+class _CartList extends StatefulWidget {
+  @override
+  State<_CartList> createState() => _CartListState();
+}
+
+class _CartListState extends State<_CartList> {
+  var checked = [true, true, true, true, true, true, true, true, true];
   @override
   Widget build(BuildContext context) {
     var itemNameStyle = Theme.of(context).textTheme.headline6;
@@ -47,7 +53,14 @@ class _CartList extends StatelessWidget {
     return ListView.builder(
       itemCount: cart.items.length,
       itemBuilder: (context, index) => ListTile(
-        leading: const Icon(Icons.done),
+        leading: IconButton(
+          icon: Icon(checked[index] ? Icons.add_box_rounded : Icons.done),
+          onPressed: () {
+            setState(() {
+              checked[index] = !checked[index];
+            });
+          },
+        ),
         trailing: IconButton(
           icon: const Icon(Icons.remove_circle_outline),
           onPressed: () {

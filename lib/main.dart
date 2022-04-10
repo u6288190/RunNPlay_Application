@@ -7,9 +7,13 @@ import 'package:provider/provider.dart';
 import 'package:runnplayapp/models/cart.dart';
 import 'package:runnplayapp/models/catalog.dart';
 import 'package:runnplayapp/theme/theme.dart';
+import 'package:runnplayapp/screens/Home.dart';
+import 'package:runnplayapp/screens/UserInfo.dart';
 import 'package:runnplayapp/screens/BodyMenuPage.dart';
-import 'package:runnplayapp/screens/LoginPage.dart';
-import 'package:runnplayapp/screens/PaymentPage.dart';
+import 'package:runnplayapp/screens/RegisterPage.dart';
+import 'package:runnplayapp/screens/MyListPage.dart';
+import 'package:runnplayapp/screens/WorkoutPage.dart';
+import 'package:runnplayapp/screens/Counter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,9 +48,13 @@ class MyApp extends StatelessWidget {
         theme: appTheme,
         initialRoute: '/',
         routes: {
-          '/': (context) => const LoginPage(),
+          '/': (context) => const HomePage(),
+          '/UserInfo': (context) => const UserInfoPage(),
+          '/Register': (context) => const RegisterPage(),
           '/BodyMenu': (context) => const BodyMenuPage(),
-          '/Payment': (context) => const PaymentPage(),
+          '/MyList': (context) => const MyListPage(),
+          '/Workout': (context) => const WorkoutPage(),
+          '/Counter': (context) => const CounterPage(),
         },
       ),
     );

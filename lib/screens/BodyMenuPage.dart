@@ -1,3 +1,4 @@
+// ignore: file_names
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -80,12 +81,12 @@ class _MyAppBar extends StatelessWidget {
       floating: true,
       actions: [
         IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pushNamed(context, '/'),
+          icon: const Icon(Icons.home),
+          onPressed: () => Navigator.pushNamed(context, '/UserInfo'),
         ),
         IconButton(
           icon: const Icon(Icons.star),
-          onPressed: () => Navigator.pushNamed(context, '/Payment'),
+          onPressed: () => Navigator.pushNamed(context, '/MyList'),
         ),
       ],
     );
@@ -123,6 +124,15 @@ class _MyListItem extends StatelessWidget {
               child: Text(item.name, style: textTheme),
             ),
             const SizedBox(width: 24),
+            TextButton(
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(16.0),
+                primary: const Color.fromARGB(255, 59, 155, 69),
+                textStyle: const TextStyle(fontSize: 18),
+              ),
+              onPressed: () => Navigator.pushNamed(context, '/Workout'),
+              child: const Text('Work Out'),
+            ),
             _AddButton(item: item),
           ],
         ),

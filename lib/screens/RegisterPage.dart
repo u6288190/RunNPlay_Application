@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text('ENTER'),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/BodyMenu');
+                  Navigator.pushReplacementNamed(context, '/');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green,
