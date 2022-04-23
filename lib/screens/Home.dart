@@ -4,9 +4,14 @@
 
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,28 +31,12 @@ class HomePage extends StatelessWidget {
                 height: 250,
                 fit: BoxFit.cover,
               ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Nickname',
-                ),
-              ),
-              const SizedBox(
-                height: 24,
+              Text(
+                'Run N Play is the application that provide an exercise formular for users and help them to exercise.',
+                style: Theme.of(context).textTheme.headline1,
               ),
               ElevatedButton(
-                child: const Text('ENTER'),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/UserInfo');
-                },
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.green,
-                ),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              ElevatedButton(
-                child: const Text('Register'),
+                child: const Text('Enter user information'),
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/Register');
                 },

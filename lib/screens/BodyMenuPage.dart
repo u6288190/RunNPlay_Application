@@ -119,11 +119,11 @@ class _MyListItem extends StatelessWidget {
                 color: item.color,
               ),
             ),
-            const SizedBox(width: 24),
+            const SizedBox(width: 15),
             Expanded(
               child: Text(item.name, style: textTheme),
             ),
-            const SizedBox(width: 24),
+            const SizedBox(width: 15),
             TextButton(
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(16.0),

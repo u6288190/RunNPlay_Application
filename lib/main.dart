@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shake/shake.dart';
 import 'package:runnplayapp/models/cart.dart';
 import 'package:runnplayapp/models/catalog.dart';
 import 'package:runnplayapp/theme/theme.dart';
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const HomePage(),
-          '/UserInfo': (context) => const UserInfoPage(),
+          '/UserInfo': (context) =>
+              UserInfoPage(name: '', gender: '', weight: '0.0', height: '0.0'),
           '/Register': (context) => const RegisterPage(),
           '/BodyMenu': (context) => const BodyMenuPage(),
           '/MyList': (context) => const MyListPage(),

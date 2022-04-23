@@ -5,10 +5,22 @@
 import 'package:flutter/material.dart';
 
 class UserInfoPage extends StatelessWidget {
-  const UserInfoPage({Key? key}) : super(key: key);
+  String name, gender;
+  String weight, height;
+  UserInfoPage(
+      {Key? key,
+      @required this.name = '',
+      @required this.gender = '',
+      @required this.weight = '',
+      @required this.height = ''})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var bmi =
+        (double.parse(weight) / (double.parse(height) * double.parse(height))) *
+            10000;
+    double finalbmi = double.parse((bmi).toStringAsFixed(1));
     return Scaffold(
       body: Center(
         child: Container(
@@ -27,23 +39,23 @@ class UserInfoPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Text(
-                'Name: Man',
+                'Name: $name',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Age: 21 years.',
+                'Gender: $gender',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Weight: 74 Kg.',
+                'Weight: $weight Kg.',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Height: 180 Cm.',
+                'Height: $height Cm.',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'BMI: 22.8 (Normal)',
+                'BMI: $finalbmi',
                 style: Theme.of(context).textTheme.headline1,
               ),
               const SizedBox(
