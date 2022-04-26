@@ -5,10 +5,75 @@
 import 'package:flutter/material.dart';
 
 class WorkoutPage extends StatelessWidget {
-  const WorkoutPage({Key? key}) : super(key: key);
+  final int bodytype;
+  const WorkoutPage({Key? key, item, required this.bodytype}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    String _program = '';
+    var _situp = 0, _pushup = 0, _squadjump = 0, _running = 0;
+    if (bodytype == 0) {
+      _program = 'Body Builder';
+      _situp = 100;
+      _pushup = 50;
+      _squadjump = 80;
+      _running = 60;
+    } else if (bodytype == 1) {
+      _program = 'Average';
+      _situp = 80;
+      _pushup = 30;
+      _squadjump = 60;
+      _running = 30;
+    } else if (bodytype == 2) {
+      _program = 'Diet';
+      _situp = 50;
+      _pushup = 20;
+      _squadjump = 30;
+      _running = 120;
+    } else if (bodytype == 3) {
+      _program = 'Healthy';
+      _situp = 50;
+      _pushup = 30;
+      _squadjump = 20;
+      _running = 80;
+    } else if (bodytype == 4) {
+      _program = 'Cardio';
+      _situp = 50;
+      _pushup = 15;
+      _squadjump = 15;
+      _running = 120;
+    } else if (bodytype == 5) {
+      _program = 'Fat burn';
+      _situp = 40;
+      _pushup = 20;
+      _squadjump = 30;
+      _running = 150;
+    } else if (bodytype == 6) {
+      _program = 'Therapy';
+      _situp = 15;
+      _pushup = 10;
+      _squadjump = 15;
+      _running = 30;
+    } else if (bodytype == 7) {
+      _program = 'Daily Workout';
+      _situp = 60;
+      _pushup = 30;
+      _squadjump = 30;
+      _running = 60;
+    } else if (bodytype == 8) {
+      _program = 'Food Routines';
+      _situp = 20;
+      _pushup = 10;
+      _squadjump = 10;
+      _running = 30;
+    } else {
+      _program = 'unknown';
+      _situp = 0;
+      _pushup = 0;
+      _squadjump = 0;
+      _running = 0;
+    }
+
     return Scaffold(
       body: Center(
         child: Container(
@@ -27,27 +92,27 @@ class WorkoutPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Text(
-                'Name: Man',
+                'Program ID: $bodytype',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'BMI: 22.8 (Normal)',
+                'Program Name: $_program',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Sit Up: 34 times',
+                'Sit Up: $_situp times',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Push Up: 22 times',
+                'Push Up: $_pushup times',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Squad Jump: 15 times)',
+                'Squad Jump: $_squadjump times',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Running: 60 minutes)',
+                'Running: $_running minutes',
                 style: Theme.of(context).textTheme.headline1,
               ),
               const SizedBox(

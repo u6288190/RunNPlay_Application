@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:runnplayapp/models/cart.dart';
 import 'package:runnplayapp/models/catalog.dart';
+import 'package:runnplayapp/screens/WorkoutPage.dart';
 
 class BodyMenuPage extends StatelessWidget {
   const BodyMenuPage({Key? key}) : super(key: key);
@@ -130,7 +131,12 @@ class _MyListItem extends StatelessWidget {
                 primary: const Color.fromARGB(255, 59, 155, 69),
                 textStyle: const TextStyle(fontSize: 18),
               ),
-              onPressed: () => Navigator.pushNamed(context, '/Workout'),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => WorkoutPage(
+                          bodytype: index,
+                        )));
+              },
               child: const Text('Work Out'),
             ),
             _AddButton(item: item),

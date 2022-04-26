@@ -55,7 +55,9 @@ class MyApp extends StatelessWidget {
           '/Register': (context) => const RegisterPage(),
           '/BodyMenu': (context) => const BodyMenuPage(),
           '/MyList': (context) => const MyListPage(),
-          '/Workout': (context) => const WorkoutPage(),
+          '/Workout': (context) => const WorkoutPage(
+                bodytype: 0,
+              ),
           '/Counter': (context) => const CounterPage(),
         },
       ),
