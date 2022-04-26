@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
 
@@ -44,12 +42,6 @@ class _CounterPageState extends State<CounterPage> {
       },
     );
     detector.startListening();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    detector.stopListening();
   }
 
   @override
@@ -307,5 +299,11 @@ class _CounterPageState extends State<CounterPage> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    detector.stopListening();
   }
 }
