@@ -23,7 +23,7 @@ class _CounterPageState extends State<CounterPage> {
   @override
   void initState() {
     super.initState();
-    detector = ShakeDetector.autoStart(
+    detector = ShakeDetector.waitForStart(
       onPhoneShake: () {
         setState(() {
           if (situpcheck == true) {
@@ -46,6 +46,7 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
+    _CounterPageState();
     return Scaffold(
       body: Center(
         child: Container(
@@ -303,7 +304,7 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   void dispose() {
-    super.dispose();
     detector.stopListening();
+    super.dispose();
   }
 }

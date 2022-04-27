@@ -96,7 +96,7 @@ class WorkoutPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
-                'Program Name: $_program',
+                'Program: $_program',
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(
